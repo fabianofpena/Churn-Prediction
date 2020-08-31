@@ -11,11 +11,11 @@
 
 
 ## Demo
-Link: [![](https://churn-pred.herokuapp.com/)](https://churn-pred.herokuapp.com/)
+Link: [https://churn-pred.herokuapp.com/](https://churn-pred.herokuapp.com/)
 
-[![](https://i.imgur.com/R1g2wvC.png)](https://flight-price-prediction-api.herokuapp.com/)
+[![](https://photos.app.goo.gl/T44kZKVsNRFRuiDE8)](https://photos.app.goo.gl/T44kZKVsNRFRuiDE8)
 
-[![](https://i.imgur.com/p0aeL6c.png)](https://flight-price-prediction-api.herokuapp.com/)
+[![](https://photos.app.goo.gl/KVdQXgztvpLbUrKn9)](https://photos.app.goo.gl/KVdQXgztvpLbUrKn9)
 
 ## Overview
 This is a Flask web app which predicts Customer Churn.

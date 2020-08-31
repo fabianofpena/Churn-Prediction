@@ -1,0 +1,376 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Churn Prediction</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">CHURN PREDICTION</a>
+            </div>
+        </div>
+    </nav>
+
+    <br><br><br>
+
+
+    <div class="container">
+
+
+
+        <form action="\predict" method="post">
+
+			<div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Tenure (in months)</h5>
+						    	<input type="text" name="tenure" placeholder="Ex: 30" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Monthly Charges (in USD)</h5>
+                            <!-- Destination -->
+						    	<input type="text" name="monthly" placeholder="Ex: 60.50" required="required" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Total Charges (in USD)</h5>
+						    	<input type="text" name="total" placeholder="Ex: 950.30" required="required" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Contract Duration:</h5>
+                            <!-- Destination -->
+                            <select name="contract" id="contract" required="required">
+                                <option value="Month">Month-to-month</option>
+								<option value="One">One Year</option>
+                                <option value="Two">Two Years</option>
+                            </select>                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Has Device Protection?</h5>
+                            <select name="protection" id="protection" required="required">
+								<option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Gender:</h5>
+                            <!-- Destination -->
+                            <select name="gender" id="gender" required="required">
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Internet Services:</h5>
+                            <select name="services" id="services" required="required">
+                                <option value="DSL">DSL</option>
+								<option value="None">None</option>
+                                <option value="Fiber Optic">Fiber Optic</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Has Multiple Lines?</h5>
+                            <!-- Destination -->
+                            <select name="multiplelines" id="multiplelines" required="required">
+								<option value="No">No</option>
+                                <option value="No Phone Service">No Phone Service</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Has Online Backup?</h5>
+                            <select name="backup" id="backup" required="required">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Has Online Security?</h5>
+                            <!-- Destination -->
+                            <select name="security" id="security" required="required">
+								<option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Has a Paperless Billing?</h5>
+                            <select name="paperless" id="paperless" required="required">
+								<option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Has a Partner?</h5>
+                            <!-- Destination -->
+                            <select name="partner" id="partner" required="required">
+                                <option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">What is the payment method?</h5>
+                            <select name="payment" id="payment" required="required">
+                                <option value="Bank Transfer">Bank Transfer</option>
+                                <option value="Credit Card">Credit Card</option>
+                                <option value="Eletronic Check">Eletronic Check</option>
+                                <option value="Mailed Check">Mailed Check</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+					<div class="col-sm-6">
+	                    <div class="card">
+	                        <div class="card-body">
+	                            <h5 class="card-title">Has any phone service?</h5>
+	                            <!-- Destination -->
+	                            <select name="phone" id="phone" required="required">
+									<option value="No">No</option>
+	                                <option value="Yes">Yes</option>
+	                            </select>                       
+	                         </div>
+	                    </div>
+	                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- Source -->
+                            <h5 class="card-title">Is a Senior Citizen?</h5>
+                            <!-- Destination -->
+                            <select name="senior" id="senior" required="required">
+								<option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>                       
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Has Streaming Movies?</h5>
+                            <!-- Destination -->
+                            <select name="movies" id="movies" required="required">
+								<option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>                       
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <br>
+            <br>
+            <br>	
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Has Streaming TV?</h5>
+                            <!-- Total Stops -->
+                            <select name="tv" id="tv" required="required">
+								<option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>                       
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Has Technical Support?</h5>
+                            <!-- Airline -->
+                            <select name="support" id="support" required="required">
+								<option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>                       
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Has Dependents?</h5>
+                            <!-- Destination -->
+                            <select name="dependents" id="dependents" required="required">
+								<option value="No">No</option>
+                                <option value="Yes">Yes</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <!-- Submit -->
+            <input type="submit" value="Submit" class="btn btn-secondary">
+        </form>
+
+        <br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+
+        <br>
+        <br>
+
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

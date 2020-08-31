@@ -13,9 +13,9 @@
 ## Demo
 Link: [https://churn-pred.herokuapp.com/](https://churn-pred.herokuapp.com/)
 
-[![](https://photos.app.goo.gl/T44kZKVsNRFRuiDE8)](https://photos.app.goo.gl/T44kZKVsNRFRuiDE8)
+[![](https://i.imgur.com/oVs8PjX.png)](https://churn-pred.herokuapp.com/)
 
-[![](https://photos.app.goo.gl/KVdQXgztvpLbUrKn9)](https://photos.app.goo.gl/KVdQXgztvpLbUrKn9)
+[![](https://i.imgur.com/azVIjeF.png)](https://churn-pred.herokuapp.com/)
 
 ## Overview
 This is a Flask web app which predicts Customer Churn.

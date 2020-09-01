@@ -1,4 +1,4 @@
-# Flight Fare Prediction: 
+# Churn Prediction: 
 
 ## Table of Content
   * [Demo](#demo)
